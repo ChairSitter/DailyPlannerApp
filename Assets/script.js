@@ -86,62 +86,47 @@ for (hour of arrayHours) {
     hour.updateColor();
 }
 
-nineAm.storageData = localStorage.getItem("Text9am")
-tenAm.storageData = localStorage.getItem("Text10am")
-elevenAm.storageData = localStorage.getItem("Text11am")
-twelvePm.storageData = localStorage.getItem("Text12pm")
-onePm.storageData = localStorage.getItem("Text1pm")
-twoPm.storageData = localStorage.getItem("Text2pm")
-threePm.storageData = localStorage.getItem("Text3pm")
-fourPm.storageData = localStorage.getItem("Text4pm")
-fivePm.storageData = localStorage.getItem("Text5pm")
-
-nineAm.setText(nineAm.storageData);
-tenAm.setText(tenAm.storageData);
-elevenAm.setText(elevenAm.storageData);
-twelvePm.setText(twelvePm.storageData);
-onePm.setText(onePm.storageData);
-twoPm.setText(twoPm.storageData);
-threePm.setText(threePm.storageData);
-fourPm.setText(fourPm.storageData);
-fivePm.setText(fivePm.storageData);
+for (let i = 0; i < arrayHours.length; i++){
+    arrayHours[i].storageData = localStorage.getItem(i);
+    arrayHours[i].setText(arrayHours[i].storageData);
+}
 
 //Method to take text from box when button is clicked and save to local storage
 const saveText9 = () => {
     let data = nineAm.getText().value;
-    localStorage.setItem("Text9am", data);
+    localStorage.setItem(0, data);
 }
 const saveText10 = () => {
     let data = tenAm.getText().value;
-    localStorage.setItem("Text10am", data);
+    localStorage.setItem(1, data);
 }
 const saveText11 = () => {
     let data = elevenAm.getText().value;
-    localStorage.setItem("Text11am", data);
+    localStorage.setItem(2, data);
 }
 const saveText12 = () => {
     let data = twelvePm.getText().value;
-    localStorage.setItem("Text12pm", data);
+    localStorage.setItem(3, data);
 }
 const saveText1 = () => {
     let data = onePm.getText().value;
-    localStorage.setItem("Text1pm", data);
+    localStorage.setItem(4, data);
 }
 const saveText2 = () => {
     let data = twoPm.getText().value;
-    localStorage.setItem("Text2pm", data);
+    localStorage.setItem(5, data);
 }
 const saveText3 = () => {
     let data = threePm.getText().value;
-    localStorage.setItem("Text3pm", data);
+    localStorage.setItem(6, data);
 }
 const saveText4 = () => {
     let data = fourPm.getText().value;
-    localStorage.setItem("Text4pm", data);
+    localStorage.setItem(7, data);
 }
 const saveText5 = () => {
     let data = fivePm.getText().value;
-    localStorage.setItem("Text5pm", data);
+    localStorage.setItem(8, data);
 }
 
 nineAm.getButton().addEventListener("click", saveText9);
