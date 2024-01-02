@@ -1,9 +1,3 @@
-
-//append to page
-    //create an element
-    //set the inner text to that variable
-    //append the element to the page
-
 //gets the time div elements from HTML
 const nineAmDiv = document.querySelector("#hour-9");
 const tenAmDiv = document.querySelector("#hour-10");
