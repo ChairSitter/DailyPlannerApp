@@ -90,54 +90,55 @@ for (hour of arrayHours) {
 }
 
 nineAm.storageData = localStorage.getItem("Text9am")
+tenAm.storageData = localStorage.getItem("Text10am")
+elevenAm.storageData = localStorage.getItem("Text11am")
+twelvePm.storageData = localStorage.getItem("Text12pm")
+onePm.storageData = localStorage.getItem("Text1pm")
+twoPm.storageData = localStorage.getItem("Text2pm")
+threePm.storageData = localStorage.getItem("Text3pm")
+fourPm.storageData = localStorage.getItem("Text4pm")
+fivePm.storageData = localStorage.getItem("Text5pm")
+
 if(nineAm.storageData){
     nineAm.setText(JSON.parse(nineAm.storageData));
     nineAm.getText.textContent = nineAm;
 }
 
-tenAm.storageData = localStorage.getItem("Text10am")
 if(tenAm.storageData){
     tenAm.setText(JSON.parse(tenAm.storageData));
     tenAm.getText.textContent = tenAm;
 }
 
-elevenAm.storageData = localStorage.getItem("Text11am")
 if(elevenAm.storageData){
     elevenAm.setText(JSON.parse(elevenAm.storageData));
     elevenAm.getText.textContent = elevenAm;
 }
 
-twelvePm.storageData = localStorage.getItem("Text12pm")
 if(twelvePm.storageData){
     twelvePm.setText(JSON.parse(twelvePm.storageData));
     twelvePm.getText.textContent = twelvePm;
 }
 
-onePm.storageData = localStorage.getItem("Text1pm")
 if(onePm.storageData){
     onePm.setText(JSON.parse(onePm.storageData));
     onePm.getText.textContent = onePm;
 }
 
-twoPm.storageData = localStorage.getItem("Text2pm")
 if(twoPm.storageData){
     twoPm.setText(JSON.parse(twoPm.storageData));
     twoPm.getText.textContent = twoPm;
 }
 
-threePm.storageData = localStorage.getItem("Text3pm")
 if(threePm.storageData){
     threePm.setText(JSON.parse(threePm.storageData));
     threePm.getText.textContent = threePm;
 }
 
-fourPm.storageData = localStorage.getItem("Text4pm")
 if(fourPm.storageData){
     fourPm.setText(JSON.parse(fourPm.storageData));
     fourPm.getText.textContent = fourPm;
 }
 
-fivePm.storageData = localStorage.getItem("Text5pm")
 if(fivePm.storageData){
     fivePm.setText(JSON.parse(fivePm.storageData));
     fivePm.getText.textContent = fivePm;
@@ -145,7 +146,6 @@ if(fivePm.storageData){
 
 //Method to take text from box when button is clicked and save to local storage
 const saveText9 = () => {
-    nineAm.storageData = localStorage.getItem("Text9am");
     if(nineAm.storageData){
         nineAm.storageData = JSON.parse(nineAm.storageData);
         nineAm.setText(nineAm.storageData);
@@ -153,12 +153,9 @@ const saveText9 = () => {
         nineAm.storageData = [];
     }
     let stringifiedData = JSON.stringify(nineAm.getText().value);
-    console.log(nineAm.getText().value)
-    console.log(stringifiedData)
     localStorage.setItem("Text9am", stringifiedData);
 }
 const saveText10 = () => {
-    tenAm.storageData = localStorage.getItem("Text10am");
     if(tenAm.storageData){
         tenAm.storageData = JSON.parse(tenAm.storageData);
         tenAm.setText(tenAm.storageData);
@@ -166,12 +163,9 @@ const saveText10 = () => {
         tenAm.storageData = [];
     }
     let stringifiedData = JSON.stringify(tenAm.getText().value);
-    console.log(tenAm.getText().value)
-    console.log(stringifiedData)
     localStorage.setItem("Text10am", stringifiedData);
 }
 const saveText11 = () => {
-    elevenAm.storageData = localStorage.getItem("Text11am");
     if(elevenAm.storageData){
         elevenAm.storageData = JSON.parse(elevenAm.storageData);
         elevenAm.setText(elevenAm.storageData);
@@ -179,12 +173,9 @@ const saveText11 = () => {
         elevenAm.storageData = [];
     }
     let stringifiedData = JSON.stringify(elevenAm.getText().value);
-    console.log(elevenAm.getText().value)
-    console.log(stringifiedData)
     localStorage.setItem("Text11am", stringifiedData);
 }
 const saveText12 = () => {
-    twelvePm.storageData = localStorage.getItem("Text12pm");
     if(twelvePm.storageData){
         twelvePm.storageData = JSON.parse(twelvePm.storageData);
         twelvePm.setText(twelvePm.storageData);
@@ -192,12 +183,9 @@ const saveText12 = () => {
         twelvePm.storageData = [];
     }
     let stringifiedData = JSON.stringify(twelvePm.getText().value);
-    console.log(twelvePm.getText().value)
-    console.log(stringifiedData)
     localStorage.setItem("Text12pm", stringifiedData);
 }
 const saveText1 = () => {
-    onePm.storageData = localStorage.getItem("Text1pm");
     if(onePm.storageData){
         onePm.storageData = JSON.parse(onePm.storageData);
         onePm.setText(onePm.storageData);
@@ -205,12 +193,9 @@ const saveText1 = () => {
         onePm.storageData = [];
     }
     let stringifiedData = JSON.stringify(onePm.getText().value);
-    console.log(onePm.getText().value)
-    console.log(stringifiedData)
     localStorage.setItem("Text1pm", stringifiedData);
 }
 const saveText2 = () => {
-    twoPm.storageData = localStorage.getItem("Text2pm");
     if(twoPm.storageData){
         twoPm.storageData = JSON.parse(twoPm.storageData);
         twoPm.setText(twoPm.storageData);
@@ -218,12 +203,9 @@ const saveText2 = () => {
         twoPm.storageData = [];
     }
     let stringifiedData = JSON.stringify(twoPm.getText().value);
-    console.log(twoPm.getText().value)
-    console.log(stringifiedData)
     localStorage.setItem("Text2pm", stringifiedData);
 }
 const saveText3 = () => {
-    threePm.storageData = localStorage.getItem("Text3pm");
     if(threePm.storageData){
         threePm.storageData = JSON.parse(threePm.storageData);
         threePm.setText(threePm.storageData);
@@ -231,12 +213,9 @@ const saveText3 = () => {
         threePm.storageData = [];
     }
     let stringifiedData = JSON.stringify(threePm.getText().value);
-    console.log(threePm.getText().value)
-    console.log(stringifiedData)
     localStorage.setItem("Text3pm", stringifiedData);
 }
 const saveText4 = () => {
-    fourPm.storageData = localStorage.getItem("Text4pm");
     if(fourPm.storageData){
         fourPm.storageData = JSON.parse(fourPm.storageData);
         fourPm.setText(fourPm.storageData);
@@ -244,12 +223,9 @@ const saveText4 = () => {
         fourPm.storageData = [];
     }
     let stringifiedData = JSON.stringify(fourPm.getText().value);
-    console.log(fourPm.getText().value)
-    console.log(stringifiedData)
     localStorage.setItem("Text4pm", stringifiedData);
 }
 const saveText5 = () => {
-    fivePm.storageData = localStorage.getItem("Text5pm");
     if(fivePm.storageData){
         fivePm.storageData = JSON.parse(fivePm.storageData);
         fivePm.setText(fivePm.storageData);
@@ -257,8 +233,6 @@ const saveText5 = () => {
         fivePm.storageData = [];
     }
     let stringifiedData = JSON.stringify(fivePm.getText().value);
-    console.log(fivePm.getText().value)
-    console.log(stringifiedData)
     localStorage.setItem("Text5pm", stringifiedData);
 }
 
