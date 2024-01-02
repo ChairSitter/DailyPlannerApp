@@ -88,7 +88,7 @@ let arrayHours = [nineAm, tenAm, elevenAm, twelvePm, onePm, twoPm,
 for (hour of arrayHours) {
     hour.updateColor();
 }
-// localStorage.clear();
+
 nineAm.storageData = localStorage.getItem("Text9am")
 if(nineAm.storageData){
     nineAm.setText(JSON.parse(nineAm.storageData));
@@ -151,7 +151,6 @@ const saveText9 = () => {
         nineAm.setText(nineAm.storageData);
     } else {
         nineAm.storageData = [];
-        console.log('there is no storage data')
     }
     let stringifiedData = JSON.stringify(nineAm.getText().value);
     console.log(nineAm.getText().value)
@@ -165,7 +164,6 @@ const saveText10 = () => {
         tenAm.setText(tenAm.storageData);
     } else {
         tenAm.storageData = [];
-        console.log('there is no storage data')
     }
     let stringifiedData = JSON.stringify(tenAm.getText().value);
     console.log(tenAm.getText().value)
@@ -179,7 +177,6 @@ const saveText11 = () => {
         elevenAm.setText(elevenAm.storageData);
     } else {
         elevenAm.storageData = [];
-        console.log('there is no storage data')
     }
     let stringifiedData = JSON.stringify(elevenAm.getText().value);
     console.log(elevenAm.getText().value)
@@ -193,7 +190,6 @@ const saveText12 = () => {
         twelvePm.setText(twelvePm.storageData);
     } else {
         twelvePm.storageData = [];
-        console.log('there is no storage data')
     }
     let stringifiedData = JSON.stringify(twelvePm.getText().value);
     console.log(twelvePm.getText().value)
@@ -207,7 +203,6 @@ const saveText1 = () => {
         onePm.setText(onePm.storageData);
     } else {
         onePm.storageData = [];
-        console.log('there is no storage data')
     }
     let stringifiedData = JSON.stringify(onePm.getText().value);
     console.log(onePm.getText().value)
@@ -221,7 +216,6 @@ const saveText2 = () => {
         twoPm.setText(twoPm.storageData);
     } else {
         twoPm.storageData = [];
-        console.log('there is no storage data')
     }
     let stringifiedData = JSON.stringify(twoPm.getText().value);
     console.log(twoPm.getText().value)
@@ -235,7 +229,6 @@ const saveText3 = () => {
         threePm.setText(threePm.storageData);
     } else {
         threePm.storageData = [];
-        console.log('there is no storage data')
     }
     let stringifiedData = JSON.stringify(threePm.getText().value);
     console.log(threePm.getText().value)
@@ -249,7 +242,6 @@ const saveText4 = () => {
         fourPm.setText(fourPm.storageData);
     } else {
         fourPm.storageData = [];
-        console.log('there is no storage data')
     }
     let stringifiedData = JSON.stringify(fourPm.getText().value);
     console.log(fourPm.getText().value)
@@ -263,7 +255,6 @@ const saveText5 = () => {
         fivePm.setText(fivePm.storageData);
     } else {
         fivePm.storageData = [];
-        console.log('there is no storage data')
     }
     let stringifiedData = JSON.stringify(fivePm.getText().value);
     console.log(fivePm.getText().value)
