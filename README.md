@@ -1,6 +1,6 @@
 # Work Day Scheduler
 
-[Screenshot](./Assets/images/ScreenshotScheduler.jpg)
+![Screenshot of scheduler app](./Assets/images/ScreenshotScheduler.jpg)
 
 ## Description
 
