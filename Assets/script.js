@@ -49,7 +49,6 @@ const HourDivider = class {
         this.#text = text;
         this.#button = button;
     }
-
     updateColor() {
         if(currentHour < this.#time){
             this.#div.classList.replace("past", "future");
@@ -82,11 +81,8 @@ const fivePm = new HourDivider(17, fivePmDiv, fiveText, fiveBut);
 let arrayHours = [nineAm, tenAm, elevenAm, twelvePm, onePm, twoPm,
      threePm, fourPm, fivePm];
 
-for (hour of arrayHours) {
-    hour.updateColor();
-}
-
 for (let i = 0; i < arrayHours.length; i++){
+    arrayHours[i].updateColor();
     arrayHours[i].storageData = localStorage.getItem(i);
     arrayHours[i].setText(arrayHours[i].storageData);
 }
