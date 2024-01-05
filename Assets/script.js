@@ -1,4 +1,4 @@
-//gets the time div elements from HTML
+//gets the time div, text field, and button elements from HTML
 const nineAmDiv = document.querySelector("#hour-9");
 const tenAmDiv = document.querySelector("#hour-10");
 const elevenAmDiv = document.querySelector("#hour-11");
@@ -37,30 +37,37 @@ let currentHour = dayjs().format("H");
 
 //creates a Divider class
 const HourDivider = class {
-    #time;
-    #div;
-    #text;
-    #button;
-    storageData;
+    #index
+    #time
+    #div
+    #text
+    #button
+    storageData
     
-    constructor(time, div, text, button) {
+    constructor(index, time, div, text, button) {
+        this.#index = index;
         this.#time = time;
         this.#div = div;
         this.#text = text;
         this.#button = button;
     }
-    updateColor() {
+    updateColor(){
         if(currentHour < this.#time){
             this.#div.classList.replace("past", "future");
         } else if(currentHour == this.#time) {
             this.#div.classList.replace("past", "present");
         }
     }
-    getButton(){
-        return this.#button;
-    }
     getText(){
         return this.#text;
+    }
+    saveText = () => {
+        let data = this.getText().value;
+        localStorage.setItem(this.#index, data);
+        console.log(data)
+    }
+    getButton(){
+        return this.#button;
     }
     setText(text){
         this.#text.textContent = text;
@@ -68,15 +75,15 @@ const HourDivider = class {
 }
 
 //instantiate class objects for each hour
-const nineAm = new HourDivider(9, nineAmDiv, nineText, nineBut);
-const tenAm = new HourDivider(10, tenAmDiv, tenText, tenBut);
-const elevenAm = new HourDivider(11, elevenAmDiv, elevenText, elevenBut);
-const twelvePm = new HourDivider(12, twelvePmDiv, twelveText, twelveBut);
-const onePm = new HourDivider(13, onePmDiv, oneText, oneBut);
-const twoPm = new HourDivider(14, twoPmDiv, twoText, twoBut);
-const threePm = new HourDivider(15, threePmDiv, threeText, threeBut);
-const fourPm = new HourDivider(16, fourPmDiv, fourText, fourBut);
-const fivePm = new HourDivider(17, fivePmDiv, fiveText, fiveBut);
+const nineAm = new HourDivider(0, 9, nineAmDiv, nineText, nineBut);
+const tenAm = new HourDivider(1, 10, tenAmDiv, tenText, tenBut);
+const elevenAm = new HourDivider(2, 11, elevenAmDiv, elevenText, elevenBut);
+const twelvePm = new HourDivider(3, 12, twelvePmDiv, twelveText, twelveBut);
+const onePm = new HourDivider(4, 13, onePmDiv, oneText, oneBut);
+const twoPm = new HourDivider(5, 14, twoPmDiv, twoText, twoBut);
+const threePm = new HourDivider(6, 15, threePmDiv, threeText, threeBut);
+const fourPm = new HourDivider(7, 16, fourPmDiv, fourText, fourBut);
+const fivePm = new HourDivider(8, 17, fivePmDiv, fiveText, fiveBut);
 
 let arrayHours = [nineAm, tenAm, elevenAm, twelvePm, onePm, twoPm,
      threePm, fourPm, fivePm];
@@ -85,53 +92,6 @@ for (let i = 0; i < arrayHours.length; i++){
     arrayHours[i].updateColor();
     arrayHours[i].storageData = localStorage.getItem(i);
     arrayHours[i].setText(arrayHours[i].storageData);
+    arrayHours[i].getButton().addEventListener("click", arrayHours[i].saveText);
 }
-
-//Method to take text from box when button is clicked and save to local storage
-const saveText9 = () => {
-    let data = nineAm.getText().value;
-    localStorage.setItem(0, data);
-}
-const saveText10 = () => {
-    let data = tenAm.getText().value;
-    localStorage.setItem(1, data);
-}
-const saveText11 = () => {
-    let data = elevenAm.getText().value;
-    localStorage.setItem(2, data);
-}
-const saveText12 = () => {
-    let data = twelvePm.getText().value;
-    localStorage.setItem(3, data);
-}
-const saveText1 = () => {
-    let data = onePm.getText().value;
-    localStorage.setItem(4, data);
-}
-const saveText2 = () => {
-    let data = twoPm.getText().value;
-    localStorage.setItem(5, data);
-}
-const saveText3 = () => {
-    let data = threePm.getText().value;
-    localStorage.setItem(6, data);
-}
-const saveText4 = () => {
-    let data = fourPm.getText().value;
-    localStorage.setItem(7, data);
-}
-const saveText5 = () => {
-    let data = fivePm.getText().value;
-    localStorage.setItem(8, data);
-}
-
-nineAm.getButton().addEventListener("click", saveText9);
-tenAm.getButton().addEventListener("click", saveText10);
-elevenAm.getButton().addEventListener("click", saveText11);
-twelvePm.getButton().addEventListener("click", saveText12);
-onePm.getButton().addEventListener("click", saveText1);
-twoPm.getButton().addEventListener("click", saveText2);
-threePm.getButton().addEventListener("click", saveText3);
-fourPm.getButton().addEventListener("click", saveText4);
-fivePm.getButton().addEventListener("click", saveText5);
 
