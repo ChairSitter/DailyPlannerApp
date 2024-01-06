@@ -3,14 +3,11 @@ currentTime.textContent = dayjs().format("dddd MMMM DD, YYYY");
 let currentHour = dayjs().format("H");
 
 const HourDivider = class {
-    #index
     #time
     #div
     #text
     #button
-    
-    constructor(index, time, div, text, button) {
-        this.#index = index;
+    constructor(time, div, text, button) {
         this.#time = time;
         this.#div = div;
         this.#text = text;
@@ -24,10 +21,10 @@ const HourDivider = class {
         }
     }
     displayText(){
-        this.#text.textContent = localStorage.getItem(this.#index);
+        this.#text.textContent = localStorage.getItem(this.#time);
     }
     saveText = () => {
-        localStorage.setItem(this.#index, this.#text.value);
+        localStorage.setItem(this.#time, this.#text.value);
     }
     auto(){
         this.updateColor();
@@ -37,7 +34,7 @@ const HourDivider = class {
 }
 
     let hours = [];
-for(let i = 0; i < 9; i++){
-    hours[i] = new HourDivider(i, (i + 9), document.querySelector(`#hour${i + 9}`), document.querySelector(`#text${i + 9}`), document.querySelector(`#but${i + 9}`));
+for(let i = 9; i < 18; i++){
+    hours[i] = new HourDivider((i), document.querySelector(`#hour${i}`), document.querySelector(`#text${i}`), document.querySelector(`#but${i}`));
     hours[i].auto();
 }
