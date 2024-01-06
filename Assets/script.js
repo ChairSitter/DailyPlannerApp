@@ -37,15 +37,15 @@ const HourDivider = class {
 }
 
 let arrayHours = [
-    new HourDivider(0, 9, document.querySelector("#hour-9"), document.querySelector("#text9"), document.querySelector("#but9")),
-    new HourDivider(1, 10, document.querySelector("#hour-10"), document.querySelector("#text10"), document.querySelector("#but10")), 
-    new HourDivider(2, 11, document.querySelector("#hour-11"), document.querySelector("#text11"), document.querySelector("#but11")), 
-    new HourDivider(3, 12, document.querySelector("#hour-12"), document.querySelector("#text12"), document.querySelector("#but12")), 
-    new HourDivider(4, 13, document.querySelector("#hour-1"), document.querySelector("#text1"), document.querySelector("#but1")), 
-    new HourDivider(5, 14, document.querySelector("#hour-2"), document.querySelector("#text2"), document.querySelector("#but2")),
-    new HourDivider(6, 15, document.querySelector("#hour-3"), document.querySelector("#text3"), document.querySelector("#but3")), 
-    new HourDivider(7, 16, document.querySelector("#hour-4"), document.querySelector("#text4"), document.querySelector("#but4")), 
-    new HourDivider(8, 17, document.querySelector("#hour-5"), document.querySelector("#text5"), document.querySelector("#but5"))
+    new HourDivider(0, 9, document.querySelector("#hour9"), document.querySelector("#text9"), document.querySelector("#but9")),
+    new HourDivider(1, 10, document.querySelector("#hour10"), document.querySelector("#text10"), document.querySelector("#but10")), 
+    new HourDivider(2, 11, document.querySelector("#hour11"), document.querySelector("#text11"), document.querySelector("#but11")), 
+    new HourDivider(3, 12, document.querySelector("#hour12"), document.querySelector("#text12"), document.querySelector("#but12")), 
+    new HourDivider(4, 13, document.querySelector("#hour1"), document.querySelector("#text1"), document.querySelector("#but1")), 
+    new HourDivider(5, 14, document.querySelector("#hour2"), document.querySelector("#text2"), document.querySelector("#but2")),
+    new HourDivider(6, 15, document.querySelector("#hour3"), document.querySelector("#text3"), document.querySelector("#but3")), 
+    new HourDivider(7, 16, document.querySelector("#hour4"), document.querySelector("#text4"), document.querySelector("#but4")), 
+    new HourDivider(8, 17, document.querySelector("#hour5"), document.querySelector("#text5"), document.querySelector("#but5"))
 ]
 
 for (hour of arrayHours){
