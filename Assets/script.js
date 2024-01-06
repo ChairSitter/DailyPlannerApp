@@ -29,7 +29,7 @@ const HourDivider = class {
     saveText = () => {
         localStorage.setItem(this.#index, this.#text.value);
     }
-    auto = () => {
+    auto(){
         this.updateColor();
         this.displayText();
         this.#button.addEventListener("click", this.saveText);
