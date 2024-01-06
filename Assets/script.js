@@ -23,7 +23,7 @@ const HourDivider = class {
             this.#div.classList.replace("past", "present");
         }
     }
-    setText(){
+    displayText(){
         this.#text.textContent = localStorage.getItem(this.#index);
     }
     saveText = () => {
@@ -31,7 +31,7 @@ const HourDivider = class {
     }
     auto = () => {
         this.updateColor();
-        this.setText();
+        this.displayText();
         this.#button.addEventListener("click", this.saveText);
     }
 }
