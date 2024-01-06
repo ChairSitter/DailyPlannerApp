@@ -35,6 +35,6 @@ const HourDivider = class {
 
     let hours = [];
 for(let i = 9; i < 18; i++){
-    hours[i] = new HourDivider((i), document.querySelector(`#hour${i}`), document.querySelector(`#text${i}`), document.querySelector(`#but${i}`));
+    hours[i] = new HourDivider(i, document.querySelector(`#hour${i}`), document.querySelector(`#text${i}`), document.querySelector(`#but${i}`));
     hours[i].auto();
 }
