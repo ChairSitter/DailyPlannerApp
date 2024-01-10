@@ -1,5 +1,7 @@
 # Work Day Scheduler
 
+https://chairsitter.github.io/DailyPlannerApp/
+
 ![Screenshot of scheduler app](./Assets/images/ScreenshotScheduler.jpg)
 
 ## Description
